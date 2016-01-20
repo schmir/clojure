@@ -31,7 +31,7 @@
                     (assoc m argsig (assoc (m argsig {}) rtype meth))))
           {} coll)))
 
-(defn proxy-name
+(defn ^:redef proxy-name
  {:tag String} 
  [^Class super interfaces]
   (let [inames (into1 (sorted-set) (map #(.getName ^Class %) interfaces))]
